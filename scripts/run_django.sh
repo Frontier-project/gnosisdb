@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "==> Migrating Django <=="
 # cd $PWD/gnosisdb
 python manage.py migrate

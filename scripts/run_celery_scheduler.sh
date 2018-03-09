@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
 database_status="$(pg_isready -h $DATABASE_HOST -U $DATABASE_USER -d $DATABASE_NAME)"
 
 # wait for RabbitMQ server and Postgres to start
 case "$database_status" in
-  *$ok_response*) >&2 echo "Database available" ;;
-  *       )  >&2 echo "GnosisDB database is unavailable - check database status" && exit 1;;
+    *$ok_response*) >&2 echo "Database available" ;;
+    *       )  >&2 echo "GnosisDB database is unavailable - check database status" && exit 1;;
 esac
 
 echo "==> run_celery_scheduler.sh <=="

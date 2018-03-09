@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo "==> Migrating Django models ... "
 python manage.py migrate --noinput
 echo "==> Collecting statics ... "
