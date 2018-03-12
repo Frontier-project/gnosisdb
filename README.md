@@ -28,7 +28,7 @@ The application is made up of several container images that are linked together 
 Run the Web container with the following command and inside create a super user in order to access the /admin interface.
 
 ```
-docker-compose run web bash
+docker-compose run web sh
 python manage.py migrate
 python manage.py createsuperuser
 ```
@@ -368,7 +368,7 @@ kubectl apply -f gnosisdb
 ### Celery task configuration
   - Create an admin user to access the /admin interface.
   ```
-    kubectl exec -it [GNOSISDB_WEB_POD_NAME] -c web bash
+    kubectl exec -it [GNOSISDB_WEB_POD_NAME] -c web sh
     python manage.py createsuperuser
   ```
   - Login into the admin /interface with your admin user
